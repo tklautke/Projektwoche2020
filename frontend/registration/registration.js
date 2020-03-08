@@ -1,21 +1,4 @@
-/**
- *  @link main
- *  @author tklautke
- *  @description this function detects if the dom is fully loaded.
- */
-window.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded and parsed');
-    main()
-});
-
-/**
- *  @link valueFromInput
- *  @author tklautke
- *  @description this is the main function, which is includes the "btn" blick event
- */
-function main() {
-    document.getElementById("btn").addEventListener("click", valueFromInput);
-}
+const url = "http://localhost:8080";
 
 /**
  *  @link convertValueFromInputIntoJson
@@ -33,23 +16,38 @@ function valueFromInput() {
     console.log(`The Value for Username is: ${userName}`);
     console.log(`The Value for Password is: ${password}`);
 
-    convertValueFromInputIntoJson(firstName, lastName, userName, password);
-}
-
-/**
- * @param firstName
- * @param lastName
- * @param userName
- * @param password
- * @description is putting all input values of the registration into a JSON object.
- * @author tklautke
- */
-function convertValueFromInputIntoJson(firstName, lastName, userName, password) {
     const obj = {
         "FirstName": firstName,
         "LastName":lastName,
         "Username": userName,
         "Password": password
     };
-    console.log(obj)
+
+    console.log(obj);
+    const objString = JSON.stringify(obj);
+    sendRegistrationJsonToServer(objString);
+}
+
+function sendRegistrationJsonToServer(objString) {
+    console.log(objString);
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", `${url}/registration`);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.onreadystatechange = function() {
+        console.log("1");
+        if(xhttp.readyState == 4 && xhttp.status == 200){
+            console.log(`status 200 (${url}/registration)`);
+            const xhttpResponse = xhttp.response;
+            console.log(xhttpResponse);
+        }else if(xhttp.readyState == 4 && xhttp.status == 422){
+            console.log(`status 200 (${url}/registration)`);
+            //TODO open a error Modal
+        }else if(xhttp.readyState == 4 && xhttp.status == 500){
+            console.log(`status 200 (${url}/registration)`);
+            //TODO open a error Modal
+        }else {
+            console.log("somthing is wrong")
+        }
+    };
+    xhttp.send(objString);
 }

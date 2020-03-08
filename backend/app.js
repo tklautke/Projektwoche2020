@@ -1,10 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const  app = express();
+const app = express();
 
 /*This is the port where the page starts */
-const  port = 8080;
-app.listen(port, ()=> console.log(`Server started at port: ${port}`));
+const port = 8080;
+app.listen(port, () => console.log(`Server started at port: ${port}`));
 
 
 app.use(function (req, res, next) {
@@ -19,11 +19,21 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-//app.use(express.static(__dirname + '../frontend/'));
-app.use(express.static( '/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/'));
+app.use(express.static('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/'));
 
 app.get('/', function (req, res) {
     res.sendFile('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/index.html')
+});
+
+app.post('/registration', (req, res) => {
+    const reqBody = req.body;
+    const firstName = reqBody.FirstName;
+    const lastName = reqBody.LastName;
+    const username = reqBody.Username;
+    const password = reqBody.Password;
+
+    console.log(firstName, lastName, username, password);
+    res.send("success")
 });
 
 
