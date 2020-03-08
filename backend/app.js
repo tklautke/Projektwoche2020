@@ -33,7 +33,16 @@ app.post('/registration', (req, res) => {
     const password = reqBody.Password;
 
     console.log(firstName, lastName, username, password);
-    res.send("success")
+    res.send("success /registration")
+});
+
+app.post('/login', (req, res) => {
+    const reqBody = req.body;
+    const username = reqBody.Username;
+    const password = reqBody.Password;
+
+    console.log(username, password);
+    res.send("success /login")
 });
 
 

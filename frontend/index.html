@@ -6,6 +6,8 @@
     <title>Projektwoche 2020</title>
 
     <script src="registration/registration.js"></script>
+    <script src="login/login.js"></script>
+    <script src="modules/sendJsonToServer.js"></script>
     <script src="index.js"></script>
 </head>
 <body>
@@ -13,27 +15,45 @@
     <h1>This is the registration </h1>
 
     <!-- Firstname  Button -->
-    <label for="first-name">First name:</label>
-    <input type="text" id="first-name">
+    <label for="first-name-registration">First name:</label>
+    <input type="text" id="first-name-registration">
     <br>
 
     <!-- Lastname Button -->
-    <label for="last-name">Last name:</label>
-    <input type="text" id="last-name">
+    <label for="last-name-registration">Last name:</label>
+    <input type="text" id="last-name-registration">
     <br>
 
     <!-- Username Button -->
-    <label for="user-name">Username:</label>
-    <input type="text" id="user-name">
+    <label for="user-name-registration">Username:</label>
+    <input type="text" id="user-name-registration">
     <br>
 
     <!-- Password  Button -->
-    <label for="password">Password:</label>
-    <input type="text" id="password">
+    <label for="password-registration">Password:</label>
+    <input type="text" id="password-registration">
     <br>
 
     <!-- Sending Button -->
-    <button id="btn">Send Data</button>
+    <button id="btn-registration">Send Data</button>
+</div>
+
+<div class="login">
+    <h1>This is the login</h1>
+
+    <!-- Username Button -->
+    <label for="user-name-login">Username:</label>
+    <input type="text" id="user-name-login">
+    <br>
+
+    <!-- Password  Button -->
+    <label for="password-login">Password:</label>
+    <input type="text" id="password-login">
+    <br>
+
+    <!-- Sending Button -->
+    <button id="btn-login">Send Data</button>
+
 </div>
 </body>
 </html>
