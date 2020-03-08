@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
+const userInsert = require("./modules/databaseOperations/userInsert.js");
+
 /*This is the port where the page starts */
 const port = 8080;
 app.listen(port, () => console.log(`Server started at port: ${port}`));
@@ -33,6 +35,8 @@ app.post('/registration', (req, res) => {
     const password = reqBody.Password;
 
     console.log(firstName, lastName, username, password);
+
+    userInsert.userInsert(firstName, lastName, username, password);
     res.send("success /registration")
 });
 

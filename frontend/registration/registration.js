@@ -21,9 +21,6 @@ function valueFromInputRegistration() {
         "Password": password
     };
 
-    console.log(obj);
-    const objString = JSON.stringify(obj);
-
     const url = "/registration";
-    sendJsonToServer(objString, url);
+    sendJsonToServer(obj, url);
 }

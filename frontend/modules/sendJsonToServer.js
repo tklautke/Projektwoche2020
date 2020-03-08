@@ -1,6 +1,7 @@
 const host = "http://localhost:8080";
 
-function sendJsonToServer(objString, url) {
+function sendJsonToServer(obj, url) {
+    const objString = JSON.stringify(obj);
     console.log(objString);
     let xhttp = new XMLHttpRequest();
     xhttp.open("POST", host + url);
@@ -18,6 +19,4 @@ function sendJsonToServer(objString, url) {
             //TODO open a error Modal
         }
     };
-    xhttp.send(objString);
-
 }

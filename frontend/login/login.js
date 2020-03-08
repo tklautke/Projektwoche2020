@@ -10,9 +10,6 @@ function valueFromInputLogin() {
         "Password": password
     };
 
-    console.log(obj);
-    const objString = JSON.stringify(obj);
-
     const url = "/login";
-    sendJsonToServer(objString, url);
+    sendJsonToServer(obj, url);
 }
