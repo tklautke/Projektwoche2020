@@ -11,6 +11,7 @@
     <script src="login/login.js"></script>
     <script src="modules/sendJsonToServer.js"></script>
     <script src="index.js"></script>
+    <script src="modules/loginModal.js"></script>
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -33,10 +34,14 @@
 
     <ul class="nav justify-content-end">
         <li class="nav-item">
-            <button class="nav-link btn btn-success navbar-buttons" data-toggle="modal" data-target="#login-modal">Login</button>
+            <button class="nav-link btn btn-success navbar-buttons" data-toggle="modal" data-target="#login-modal">
+                Login
+            </button>
         </li>
         <li class="nav-item">
-            <button class="nav-link btn btn-outline-secondary navbar-buttons" data-toggle="modal" data-target="#registration-modal">Register</button>
+            <button class="nav-link btn btn-outline-secondary navbar-buttons" data-toggle="modal"
+                    data-target="#registration-modal">Register
+            </button>
         </li>
     </ul>
 </nav>
@@ -66,6 +71,11 @@
                         </div>
                         <div class="col-9">
                             <input type="text" id="password-login" class="inputfield">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="alert alert-danger password-error" role="alert" id="login-err-password-modal">
+                            Your credentials are wrong
                         </div>
                     </div>
                 </div>
@@ -131,44 +141,5 @@
         </div>
     </div>
 </div>
-
-
-
-<!--<div class="registration">
-    <h1>This is the registration </h1>
-
-    <label for="first-name-registration">First name:</label>
-    <input type="text" id="first-name-registration">
-    <br>
-
-    <label for="last-name-registration">Last name:</label>
-    <input type="text" id="last-name-registration">
-    <br>
-
-    <label for="user-name-registration">Username:</label>
-    <input type="text" id="user-name-registration">
-    <br>
-
-    <label for="password-registration">Password:</label>
-    <input type="text" id="password-registration">
-    <br>
-
-    <button id="btn-registration">Send Data</button>
-</div>
-
-<div class="login">
-    <h1>This is the login</h1>
-
-    <label for="user-name-login">Username:</label>
-    <input type="text" id="user-name-login">
-    <br>
-
-    <label for="password-login">Password:</label>
-    <input type="text" id="password-login">
-    <br>
-
-    <button id="btn-login">Send Data</button>
-
-</div> -->
 </body>
 </html>

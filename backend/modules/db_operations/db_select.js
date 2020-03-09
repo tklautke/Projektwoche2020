@@ -21,7 +21,7 @@ exports.dbSelect = async function dbSelect(username, password, res) {
 
                     if(result.length == 0){
                         console.log("Test");
-                        res.send("User doesnt exist");
+                        res.send("err");
                         return;
                     }
                     const passwordDB = result[0].password;
@@ -32,7 +32,7 @@ exports.dbSelect = async function dbSelect(username, password, res) {
                         res.send("User and password are correct: " + isPasswordValid);
                     }else{
                         isPasswordValid = false;
-                        res.send("User and password aren't correct: " + isPasswordValid);
+                        res.send("wrong password");
                     }
                     console.log("Password is is database: " + isPasswordValid);
                 },

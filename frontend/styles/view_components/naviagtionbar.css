@@ -5,3 +5,8 @@
 .navbar-buttons{
   margin-left: 10px;
 }
+
+#login-err-password-modal{
+  width: 100%;
+  display: none;
+}
