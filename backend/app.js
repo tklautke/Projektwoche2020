@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const dbInsert = require('./modules/db_operations/db_insert.js');
+const dbSelect = require('./modules/db_operations/db_select.js')
 
 /*This is the port where the page starts */
 const port = 8080;
@@ -44,6 +45,7 @@ app.post('/login', (req, res) => {
     const username = reqBody.Username;
     const password = reqBody.Password;
 
+    dbSelect.dbSelect(username, password);
     console.log(username, password);
     res.send("success /login")
 });
