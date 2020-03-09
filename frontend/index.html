@@ -1,59 +1,119 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Projektwoche 2020</title>
+
+    <link rel="stylesheet" type="text/css" href="styles/view_components/naviagtionbar.css">
 
     <script src="registration/registration.js"></script>
     <script src="login/login.js"></script>
     <script src="modules/sendJsonToServer.js"></script>
     <script src="index.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
 </head>
 <body>
-<div class="registration">
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">Grundschule Wasserburg</a>
+
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <button class="nav-link btn btn-success navbar-buttons" data-toggle="modal" data-target="#login-modal">Login</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link btn btn-outline-secondary navbar-buttons" href="#">Register</button>
+        </li>
+    </ul>
+</nav>
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Username:</p>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" id="user-name-login">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Password:</p>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" id="password-login">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn btn-success" id="btn-login">Login</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="registration">
     <h1>This is the registration </h1>
 
-    <!-- Firstname  Button -->
     <label for="first-name-registration">First name:</label>
     <input type="text" id="first-name-registration">
     <br>
 
-    <!-- Lastname Button -->
     <label for="last-name-registration">Last name:</label>
     <input type="text" id="last-name-registration">
     <br>
 
-    <!-- Username Button -->
     <label for="user-name-registration">Username:</label>
     <input type="text" id="user-name-registration">
     <br>
 
-    <!-- Password  Button -->
     <label for="password-registration">Password:</label>
     <input type="text" id="password-registration">
     <br>
 
-    <!-- Sending Button -->
     <button id="btn-registration">Send Data</button>
 </div>
 
 <div class="login">
     <h1>This is the login</h1>
 
-    <!-- Username Button -->
     <label for="user-name-login">Username:</label>
     <input type="text" id="user-name-login">
     <br>
 
-    <!-- Password  Button -->
     <label for="password-login">Password:</label>
     <input type="text" id="password-login">
     <br>
 
-    <!-- Sending Button -->
     <button id="btn-login">Send Data</button>
 
-</div>
+</div> -->
 </body>
 </html>

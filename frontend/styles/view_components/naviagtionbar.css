@@ -1,0 +1,8 @@
+input#user-name-login,
+input#password-login{
+  width: 100%;
+}
+
+.navbar-buttons{
+  margin-left: 10px;
+}
