@@ -28,6 +28,10 @@ app.get('/', function (req, res) {
     res.sendFile('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/index.html')
 });
 
+app.get('/home', function (req, res) {
+    res.sendFile('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/home.html')
+});
+
 app.post('/registration', (req, res) => {
     const reqBody = req.body;
     const firstName = reqBody.FirstName;
