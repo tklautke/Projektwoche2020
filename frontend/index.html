@@ -36,7 +36,7 @@
             <button class="nav-link btn btn-success navbar-buttons" data-toggle="modal" data-target="#login-modal">Login</button>
         </li>
         <li class="nav-item">
-            <button class="nav-link btn btn-outline-secondary navbar-buttons" href="#">Register</button>
+            <button class="nav-link btn btn-outline-secondary navbar-buttons" data-toggle="modal" data-target="#registration-modal">Register</button>
         </li>
     </ul>
 </nav>
@@ -57,7 +57,7 @@
                             <p>Username:</p>
                         </div>
                         <div class="col-9">
-                            <input type="text" id="user-name-login">
+                            <input type="text" id="user-name-login" class="inputfield">
                         </div>
                     </div>
                     <div class="row">
@@ -65,7 +65,7 @@
                             <p>Password:</p>
                         </div>
                         <div class="col-9">
-                            <input type="text" id="password-login">
+                            <input type="text" id="password-login" class="inputfield">
                         </div>
                     </div>
                 </div>
@@ -77,6 +77,61 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="registration-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Register</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Firstname:</p>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" id="first-name-registration" class="inputfield">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Lastname:</p>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" id="last-name-registration" class="inputfield">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Username:</p>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" id="user-name-registration" class="inputfield">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Password:</p>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" id="password-registration" class="inputfield">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn btn-success" id="btn-registration">Register</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 <!--<div class="registration">

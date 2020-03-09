@@ -1,5 +1,4 @@
-input#user-name-login,
-input#password-login{
+.inputfield {
   width: 100%;
 }
 
