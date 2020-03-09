@@ -29,10 +29,10 @@ exports.dbSelect = async function dbSelect(username, password, res) {
                     let isPasswordValid = false;
                     if(passwordDB == password){
                         isPasswordValid = true;
-                        res.send(isPasswordValid);
+                        res.send("User and password are correct: " + isPasswordValid);
                     }else{
                         isPasswordValid = false;
-                        res.send(isPasswordValid);
+                        res.send("User and password aren't correct: " + isPasswordValid);
                     }
                     console.log("Password is is database: " + isPasswordValid);
                 },
