@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const dbInsert = require('./modules/db_operations/db_insert.js');
-const dbSelect = require('./modules/db_operations/db_select.js')
+const dbSelect = require('./modules/db_operations/db_select.js');
+const uuidv1 = require('uuidv1');
 
 /*This is the port where the page starts */
 const port = 8080;
@@ -33,10 +34,12 @@ app.post('/registration', (req, res) => {
     const lastName = reqBody.LastName;
     const username = reqBody.Username;
     const password = reqBody.Password;
+    const uuid = uuidv1();
+    const timestamp = new Date();
 
-    console.log(firstName, lastName, username, password);
+    console.log(firstName, lastName, username, password, uuid, timestamp);
 
-    dbInsert.dbInsert(firstName, lastName, username, password);
+    dbInsert.dbInsert(firstName, lastName, username, password, uuid, timestamp);
     res.send("success /registration")
 });
 

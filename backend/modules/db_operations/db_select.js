@@ -14,12 +14,12 @@ exports.dbSelect = async function dbSelect(username, password, res) {
     new Promise((resolve, reject) => {
         try {
             db.query(
-                `SELECT * FROM PROJEKTWOCHE_GRUNDSCHULE.USER WHERE username = '${username}'`,
+                `SELECT * FROM PROJEKTWOCHE_GRUNDSCHULE.FULL_USER WHERE username = '${username}'`,
                 (err, result, fields) => {
                     console.log(result);
                     //TODO let service dont crash if the username is not in database
 
-                    if(result.length == 0){
+                    if (result.length == 0) {
                         console.log("Test");
                         res.send("err");
                         return;
@@ -27,10 +27,10 @@ exports.dbSelect = async function dbSelect(username, password, res) {
                     const passwordDB = result[0].password;
 
                     let isPasswordValid = false;
-                    if(passwordDB == password){
+                    if (passwordDB == password) {
                         isPasswordValid = true;
                         res.send("User and password are correct: " + isPasswordValid);
-                    }else{
+                    } else {
                         isPasswordValid = false;
                         res.send("wrong password");
                     }
