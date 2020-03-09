@@ -2,7 +2,7 @@ let config = {
     host: "localhost",
     user: "root",
     password: "Asdfg_hjkl1",
-    database: "projektwoche2020",
+    database: "PROJEKTWOCHE_GRUNDSCHULE",
     connectionTimeout: 10000
 };
 
