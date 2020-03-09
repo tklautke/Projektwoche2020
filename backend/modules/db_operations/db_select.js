@@ -18,8 +18,14 @@ exports.dbSelect = async function dbSelect(username, password, res) {
                 (err, result, fields) => {
                     console.log(result);
                     //TODO let service dont crash if the username is not in database
-                    const usernameDB = result[0].username;
+
+                    if(result.length == 0){
+                        console.log("Test");
+                        res.send("User doesnt exist");
+                        return;
+                    }
                     const passwordDB = result[0].password;
+
                     let isPasswordValid = false;
                     if(passwordDB == password){
                         isPasswordValid = true;
