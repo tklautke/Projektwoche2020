@@ -20,7 +20,6 @@ exports.dbSelect = async function dbSelect(username, password, res) {
                     //TODO let service dont crash if the username is not in database
 
                     if (result.length == 0) {
-                        console.log("Test");
                         res.send("err");
                         return;
                     }
@@ -29,7 +28,7 @@ exports.dbSelect = async function dbSelect(username, password, res) {
                     let isPasswordValid = false;
                     if (passwordDB == password) {
                         isPasswordValid = true;
-                        res.send("User and password are correct: " + isPasswordValid);
+                        res.send("correct credentials");
                     } else {
                         isPasswordValid = false;
                         res.send("wrong password");

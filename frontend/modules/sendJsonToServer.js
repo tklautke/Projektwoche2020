@@ -11,9 +11,11 @@ function sendJsonToServer(objString, url) {
             const xhttpResponse = xhttp.response;
             console.log(xhttpResponse);
             if (xhttpResponse === "err"){
-                openWrongPasswordModal();
+                openWrongPassword();
             }else if (xhttpResponse == "wrong password"){
-                openWrongPasswordModal();
+                openWrongPassword();
+            }else if(xhttpResponse == "correct credentials"){
+                closePassword();
             }
         }else if(xhttp.readyState == 4 && xhttp.status == 422){
             console.log(`status 200 (${host}${url})`);
