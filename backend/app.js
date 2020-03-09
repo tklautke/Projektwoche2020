@@ -44,9 +44,8 @@ app.post('/login', (req, res) => {
     const reqBody = req.body;
     const username = reqBody.Username;
     const password = reqBody.Password;
-
+    console.log(username);
     dbSelect.dbSelect(username, password);
-    console.log(username, password);
     res.send("success /login")
 });
 

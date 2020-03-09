@@ -1,4 +1,4 @@
-const  express = require('express');
+const express = require('express');
 const router = express();
 const db = require('./db_connection.js');
 
@@ -10,13 +10,24 @@ router.use(function (req, res, next) {
 
 exports.dbSelect = async function dbSelect(username, password) {
     console.log('database select');
+    console.log("Username is:", username);
     new Promise((resolve, reject) => {
         try {
-            console.log(username, password);
             db.query(
-                `SELECT * FROM PROJEKTWOCHE_GRUNDSCHULE.USER`,
-                function(err, result, fields){
+                `SELECT * FROM PROJEKTWOCHE_GRUNDSCHULE.USER WHERE username = '${username}'`,
+                (err, result, fields) => {
                     console.log(result);
+                    const usernameDB = result[0].username;
+                    const passwordDB = result[0].password;
+                    let isPasswordValid = false;
+                    if(passwordDB == password){
+                        isPasswordValid = true;
+                    }else{
+                        isPasswordValid = false;
+                    }
+
+                    console.log("Password is is database: " + isPasswordValid);
+
                 },
                 resolve("success")
             );
