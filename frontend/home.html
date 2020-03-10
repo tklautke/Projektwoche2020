@@ -6,11 +6,11 @@
     <title>Projektwoche 2020</title>
 
     <link rel="stylesheet" type="text/css" href="styles/view_components/naviagtionbar.css">
+    <link rel="stylesheet" type="text/css" href="styles/view_components/header.css">
 
     <script src="registration/registration.js"></script>
     <script src="login/login.js"></script>
     <script src="modules/sendJsonToServer.js"></script>
-    <script src="index.js"></script>
     <script src="modules/loginModal.js"></script>
     <script src="modules/openNewHtml.js"></script>
 
@@ -31,10 +31,86 @@
 <body>
 
 <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">Grundschule Wasserburg</a>
-
-
+    <a class="navbar-brand" href="http://localhost:8080">Grundschule Wasserburg</a>
 </nav>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-12 sub-headliner">
+            <h4>Anmeldung zum Wintersporttag</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <form>
+
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label for="first-name">Vorname</label>
+                        <input type="text" class="form-control" id="first-name" placeholder="Vorname">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label for="last-name">Nachname</label>
+                        <input type="text" class="form-control" id="last-name" placeholder="Nachname">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="select-class">Klasse</label>
+                        <select id="select-class" class="form-control">
+                            <option>1a</option>
+                            <option>1b</option>
+                            <option>2a</option>
+                            <option>2b</option>
+                            <option>3a</option>
+                            <option>3b</option>
+                            <option>4a</option>
+                            <option>4b</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Addresse</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="Schulstraße 4">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-10">
+                        <label for="inputCity">Stadt</label>
+                        <input type="text" class="form-control" id="inputCity" placeholder="Wasserburg">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Plz.</label>
+                        <input type="text" class="form-control" id="inputZip" placeholder="88142">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-10">
+                        <label for="discipline-input">Disziplin</label>
+                        <select class="form-control" id="discipline-input">
+                            <option>Skifahren</option>
+                            <option>Schlittenfahren</option>
+                            <option>Schlittschuhlaufen</option>
+                            <option>Schwimmen</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="performance-level">Leistungsstufe</label>
+                        <select type="text" class="form-control" id="performance-level">
+                            <option>Anfänger</option>
+                            <option>Fortgeschritten</option>
+                            <option>Geübt</option>
+                            <option>Sportlich</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
