@@ -8,17 +8,14 @@ function valueFromInputRegistration() {
     const lastName = document.getElementById("last-name-registration").value;
     const userName = document.getElementById("user-name-registration").value;
     const password = document.getElementById("password-registration").value;
-
-    console.log(`The Value for Firstname is: ${firstName}`);
-    console.log(`The Value for Lastname  is: ${lastName}`);
-    console.log(`The Value for Username is: ${userName}`);
-    console.log(`The Value for Password is: ${password}`);
+    const type = document.getElementById("typ-registration").value;
 
     const obj = {
         "FirstName": firstName,
         "LastName":lastName,
         "Username": userName,
-        "Password": password
+        "Password": password,
+        "typ": type
     };
 
     console.log(obj);

@@ -39,12 +39,14 @@ app.post('/registration', (req, res) => {
     const lastName = reqBody.LastName;
     const username = reqBody.Username;
     const password = reqBody.Password;
+    const typ = reqBody.typ;
     const uuid = uuidv1();
     const timestamp = new Date();
 
     console.log(firstName, lastName, username, password, uuid, timestamp);
+    console.log("Der Typ ist: " + typ);
 
-    dbInsert.dbInsert(firstName, lastName, username, password, uuid, timestamp);
+    dbInsert.dbInsert(firstName, lastName, username, password, uuid, timestamp, typ);
     res.send("success /registration")
 });
 

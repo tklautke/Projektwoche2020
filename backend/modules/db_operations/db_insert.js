@@ -8,15 +8,15 @@ router.use(function (req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type')
 });
 
-exports.dbInsert = async function dbInsert(firstName, lastName, username, password,  uuid, timestamp) {
+exports.dbInsert = async function dbInsert(firstName, lastName, username, password,  uuid, timestamp, type) {
     console.log('database insert');
     new Promise((resolve, reject) => {
         try {
             //TODO Insert UUID and timestamp
-            console.log(firstName, lastName, username, password, uuid, timestamp);
+            console.log(firstName, lastName, username, password, uuid, timestamp, type);
             db.query(
-                `INSERT INTO PROJEKTWOCHE_GRUNDSCHULE.FULL_USER SET timestamp = ?, uuid = ?, firstName = ?, lastName = ?, username = ?, password = ?`,
-                [timestamp, uuid, firstName, lastName, username, password],
+                `INSERT INTO PROJEKTWOCHE_GRUNDSCHULE.FULL_USER SET timestamp = ?, uuid = ?, firstName = ?, lastName = ?, username = ?, password = ?, type = ?`,
+                [timestamp, uuid, firstName, lastName, username, password, type],
                 resolve("success")
             );
         } catch {
