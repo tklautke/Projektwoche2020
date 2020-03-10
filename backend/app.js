@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const dbInsert = require('./modules/db_operations/db_insert.js');
+const dbInsertWOS = require('./modules/db_operations/db_insert_wos.js');
 const dbSelect = require('./modules/db_operations/db_select.js');
 const uuidv1 = require('uuidv1');
 
@@ -55,6 +56,19 @@ app.post('/login', (req, res) => {
     dbSelect.dbSelect(username, password, res);
 });
 
+app.post('/wosInput', (req, res) => {
+    const reqBody = req.body;
+    const firstName = reqBody.firstName;
+    const lastName = reqBody.lastName;
+    const schoolClass = reqBody.schoolClass;
+    const adress = reqBody.adress;
+    const city = reqBody.city;
+    const zipCode = reqBody.zipCode;
+    const discipline = reqBody.discipline;
+    const performanceLevel = reqBody.performanceLevel;
+    const uuid = uuidv1();
+    const timestamp = new Date();
 
-
-
+    dbInsertWOS.dbInsertWOS(uuid, timestamp, firstName, lastName, schoolClass, adress, city, zipCode, discipline, performanceLevel, res);
+    res.send("nice");
+});
