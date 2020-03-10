@@ -7,13 +7,14 @@
 
     <link rel="stylesheet" type="text/css" href="styles/view_components/naviagtionbar.css">
     <link rel="stylesheet" type="text/css" href="styles/view_components/header.css">
+    <link rel="stylesheet" type="text/css" href="styles/view_components/wosLehrerModal.css">
 
 
     <script src="login/login.js"></script>
     <script src="modules/sendJsonToServer.js"></script>
 
     <script src="modules/openNewHtml.js"></script>
-    <script src="home.js"></script>
+    <script src="wosLehrer.js"></script>
     <script src="wosForm/collectWos.js"></script>
 
 
@@ -32,9 +33,13 @@
 <body>
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="http://localhost:8080">Grundschule Wasserburg</a>
+    <div class="justify-end">
+        <button class="nav-link btn btn-outline-secondary navbar-buttons" data-toggle="modal"
+                data-target="#accept-pupil-modal">Schüler akzeptieren
+        </button>
+    </div>
 </nav>
 <div class="container">
-
     <div class="row">
         <div class="col-12 sub-headliner">
             <h4>Anmeldung zum Wintersporttag</h4>
@@ -76,7 +81,7 @@
                         <input type="text" class="form-control" id="inputCity-wos" placeholder="Wasserburg">
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputZip-wos">Plz.</label>
+                        <label for="inputZip-wos">PLZ.</label>
                         <input type="text" class="form-control" id="inputZip-wos" placeholder="88142">
                     </div>
                 </div>
@@ -101,10 +106,67 @@
                         </select>
                     </div>
                 </div>
-                <button  class="btn btn-outline-secondary" id="btn-wos">Eintragen</button>
+                <button class="btn btn-outline-secondary" id="btn-wos">Eintragen</button>
             </form>
         </div>
     </div>
 </div>
+
+
+
+
+
+<div class="modal fade" id="accept-pupil-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Schüler akzeptieren</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <p>Nachname des Schülers:</p>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" id="lastname-accept" class="inputfield">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <p>Unterschrift erhalten:</p>
+                        </div>
+                        <div class="col-7">
+                            <input type="checkbox" class="form-check-input check-input" id="accept-pupil-signed">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <p>Bezahlt:</p>
+                        </div>
+                        <div class="col-7">
+                            <input type="checkbox" class="form-check-input check-input" id="accept-pupil-payed">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="alert alert-danger password-error" role="alert" id="login-err-password-modal">
+                            Deine Anmeldedaten sind falsch
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn btn-success" id="accept-pupil-btn">Akzeptieren</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 </body>
 </html>

@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const dbInsert = require('./modules/db_operations/db_insert.js');
+const dbUpdateWos = require('./modules/db_operations/db_update_wos.js');
 const dbInsertWOS = require('./modules/db_operations/db_insert_wos.js');
 const dbSelect = require('./modules/db_operations/db_select.js');
 const uuidv1 = require('uuidv1');
@@ -29,8 +30,8 @@ app.get('/', function (req, res) {
     res.sendFile('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/index.html')
 });
 
-app.get('/home', function (req, res) {
-    res.sendFile('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/home.html')
+app.get('/wosLehrer', function (req, res) {
+    res.sendFile('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/wosLehrer.html')
 });
 
 app.post('/registration', (req, res) => {
@@ -73,4 +74,17 @@ app.post('/wosInput', (req, res) => {
 
     dbInsertWOS.dbInsertWOS(uuid, timestamp, firstName, lastName, schoolClass, adress, city, zipCode, discipline, performanceLevel, res);
     res.send("nice");
+});
+
+app.post('/accept-pupil', (req, res) => {
+    const reqBody = req.body;
+
+    const lastname = reqBody.lastname;
+    const signed = reqBody.signed;
+    const payed = reqBody.payed;
+
+    console.log(lastname, signed, payed);
+    console.log(reqBody);
+
+    dbUpdateWos.dbUpdateWos(lastname, signed, payed, res);
 });
