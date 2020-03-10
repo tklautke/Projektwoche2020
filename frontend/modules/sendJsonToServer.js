@@ -1,6 +1,6 @@
 const host = "http://localhost:8080";
 
-function sendJsonToServer(objString, url) {
+function sendJsonToServer(objString, url, teacher) {
     console.log(objString);
     let xhttp = new XMLHttpRequest();
     xhttp.open("POST", host + url);
@@ -16,7 +16,7 @@ function sendJsonToServer(objString, url) {
                 openWrongPassword();
             }else if(xhttpResponse == "correct credentials"){
                 closePassword();
-                openNewHtmlPage();
+                openNewHtmlPage(teacher);
             }
         }else if(xhttp.readyState == 4 && xhttp.status == 422){
             console.log(`status 200 (${host}${url})`);

@@ -1,5 +1,6 @@
 
 input#accept-pupil-payed,
-input#accept-pupil-signed{
+input#accept-pupil-signed,
+input#login-checkbox-teacher{
     margin: 0;
 }

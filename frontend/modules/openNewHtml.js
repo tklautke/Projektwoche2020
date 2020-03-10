@@ -1,4 +1,10 @@
-function openNewHtmlPage() {
+function openNewHtmlPage(teacher) {
     console.log("open new page");
-    window.location.href = 'http://localhost:8080/wosLehrer';
+
+    if(teacher){
+        window.location.href = 'http://localhost:8080/wosLehrer';
+    }else{
+        window.location.href = 'http://google.de';
+    }
+
 }
