@@ -10,18 +10,18 @@ router.use(function (req, res, next) {
 
 exports.dbUpdateWos = async function dbUpdateWos(lastname, signed, payed, res) {
     new Promise(function (resolve, reject) {
-        try{
+        try {
             db.query(
                 `UPDATE PROJEKTWOCHE_GRUNDSCHULE.WOS_REGISTRATIONS SET signed = ?, payed = ? WHERE LASTNAME = ? `,
                 [signed, payed, lastname],
 
-                function(){
+                function () {
                     res.send("nice")
                 },
                 resolve("success")
             )
-        }catch {
-            reject("error")
+        } catch (error) {
+            reject(error)
         }
     })
 }

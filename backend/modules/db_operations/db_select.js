@@ -37,8 +37,8 @@ exports.dbSelect = async function dbSelect(username, password, res) {
                 },
                 resolve("success")
             );
-        } catch {
-            reject("error")
+        } catch (error) {
+            reject(error)
         }
     })
 };

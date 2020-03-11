@@ -1,4 +1,4 @@
-const  express = require('express');
+const express = require('express');
 const router = express();
 const db = require('./db_connection.js');
 
@@ -18,8 +18,8 @@ exports.dbInsertWOS = async function dbInsertWOS(uuid, timestamp, firstName, las
                 [timestamp, uuid, schoolClass, adress, city, zipCode, discipline, performanceLevel, firstName, lastName],
                 resolve("success")
             );
-        } catch {
-            reject("error")
+        } catch (error) {
+            reject(error)
         }
     })
 };

@@ -1,4 +1,4 @@
-const  express = require('express');
+const express = require('express');
 const router = express();
 const db = require('./db_connection.js');
 
@@ -8,7 +8,7 @@ router.use(function (req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type')
 });
 
-exports.dbInsert = async function dbInsert(firstName, lastName, username, password,  uuid, timestamp, type) {
+exports.dbInsert = async function dbInsert(firstName, lastName, username, password, uuid, timestamp, type) {
     console.log('database insert');
     new Promise((resolve, reject) => {
         try {
@@ -19,8 +19,8 @@ exports.dbInsert = async function dbInsert(firstName, lastName, username, passwo
                 [timestamp, uuid, firstName, lastName, username, password, type],
                 resolve("success")
             );
-        } catch {
-            reject("error")
+        } catch (error) {
+            reject(error)
         }
     })
 };

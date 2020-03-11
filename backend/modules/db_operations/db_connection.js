@@ -4,9 +4,9 @@ const db_cofig = require('./db_config.js');
 let pool = mysql.createPool(db_cofig);
 
 pool.getConnection(function (err, connection) {
-    if(err === null){
+    if (err === null) {
         console.log("Datasbase started at Port: " + connection.config.port);
-    }else{
+    } else {
         console.log("There was an Error woth the Databse");
         console.log(err);
         throw err;
