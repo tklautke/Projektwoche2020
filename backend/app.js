@@ -1,10 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const dbInsert = require('./modules/db_operations/db_insert.js');
-const dbUpdateWos = require('./modules/db_operations/db_update_wos.js');
-const dbInsertWOS = require('./modules/db_operations/db_insert_wos.js');
-const dbSelect = require('./modules/db_operations/db_select.js');
+const dbInsert = require('./modules/db_insert.js');
+const dbUpdateWos = require('./modules/db_update_wos.js');
+const dbInsertWOS = require('./modules/db_insert_wos.js');
+const dbSelect = require('./modules/db_select.js');
 const uuidv1 = require('uuidv1');
 
 //these paths need to be changes on the server
