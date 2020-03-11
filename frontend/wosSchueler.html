@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projektwoche 2020</title>
+
+    <link rel="stylesheet" type="text/css" href="styles/view_components/naviagtionbar.css">
+    <link rel="stylesheet" type="text/css" href="styles/view_components/header.css">
+    <link rel="stylesheet" type="text/css" href="styles/view_components/wosLehrerModal.css">
+
+
+    <script src="login/login.js"></script>
+    <script src="modules/sendJsonToServer.js"></script>
+
+    <script src="modules/openNewHtml.js"></script>
+    <script src="wosSchueler.js"></script>
+    <script src="wosForm/collectWos.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="http://localhost:8080">Grundschule Wasserburg</a>
+
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-12 sub-headliner">
+            <h4>Anmeldung zum Wintersporttag</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label for="first-name-wos">Vorname</label>
+                        <input type="text" class="form-control" id="first-name-wos" placeholder="Vorname">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label for="last-name-wos">Nachname</label>
+                        <input type="text" class="form-control" id="last-name-wos" placeholder="Nachname">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="select-class-wos">Klasse</label>
+                        <select id="select-class-wos" class="form-control">
+                            <option value="1a">1a</option>
+                            <option value="1b">1b</option>
+                            <option value="2a">2a</option>
+                            <option value="2b">2b</option>
+                            <option value="3a">3a</option>
+                            <option value="3b">3b</option>
+                            <option value="4a">4a</option>
+                            <option value="4b">4b</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress-wos">Addresse</label>
+                    <input type="text" class="form-control" id="inputAddress-wos" placeholder="Schulstraße 4">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-10">
+                        <label for="inputCity-wos">Stadt</label>
+                        <input type="text" class="form-control" id="inputCity-wos" placeholder="Wasserburg">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip-wos">PLZ.</label>
+                        <input type="text" class="form-control" id="inputZip-wos" placeholder="88142">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-10">
+                        <label for="discipline-input-wos">Disziplin</label>
+                        <select class="form-control" id="discipline-input-wos">
+                            <option>Skifahren</option>
+                            <option>Schlittenfahren</option>
+                            <option>Schlittschuhlaufen</option>
+                            <option>Schwimmen</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="performance-level-wos">Leistungsstufe</label>
+                        <select class="form-control" id="performance-level-wos">
+                            <option>Anfänger</option>
+                            <option>Fortgeschritten</option>
+                            <option>Geübt</option>
+                            <option>Sportlich</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-outline-secondary" id="btn-wos">Eintragen</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

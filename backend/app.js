@@ -34,6 +34,10 @@ app.get('/wosLehrer', function (req, res) {
     res.sendFile('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/wosLehrer.html')
 });
 
+app.get('/wosSchueler', function (req, res) {
+    res.sendFile('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/wosSchueler.html')
+});
+
 app.post('/registration', (req, res) => {
     const reqBody = req.body;
     const firstName = reqBody.FirstName;
