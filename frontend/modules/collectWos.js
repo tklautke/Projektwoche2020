@@ -1,4 +1,9 @@
-
+/**
+ * @author tklautke
+ * @description this is collecting the values from the input with the ID's
+ * @link sendJsonToServer
+ * @link openPrintView
+ */
 function valueFromInputWos() {
     const firstName = document = document.getElementById("first-name-wos").value;
     const lastName = document = document.getElementById("last-name-wos").value;
@@ -19,14 +24,18 @@ function valueFromInputWos() {
         "discipline": discipline,
         "performanceLevel": performanceLevel
     };
-
     const objString = JSON.stringify(obj);
-
     const url = "/wosInput";
     sendJsonToServer(objString, url);
     openPrintView(obj)
 }
 
+/**
+ * @author tklautke
+ * @description this is collecting the values from the input with the ID's
+ * @link sendJsonToServer
+ * @link openPrintView
+ */
 function acceptPupilWos() {
     const signed = document = document.getElementById("accept-pupil-signed").checked;
     const payed = document = document.getElementById("accept-pupil-payed").checked;
@@ -41,8 +50,6 @@ function acceptPupilWos() {
     };
 
     const objString = JSON.stringify(obj);
-
     sendJsonToServer(objString, url);
-
     openPrintView(obj);
 }

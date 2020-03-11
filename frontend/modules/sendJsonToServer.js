@@ -1,3 +1,9 @@
+/**
+ * @author tklautke
+ * @link openWrongPassword
+ * @link openNewHtmlPage
+ * @description this is sending the values from the inputs in the backend.
+ */
 function sendJsonToServer(objString, url, teacher) {
     const host = "http://localhost:8080";
     let xhttp = new XMLHttpRequest();

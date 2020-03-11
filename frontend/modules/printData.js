@@ -1,3 +1,7 @@
+/**
+ * @author tklautke
+ * @description this opens the print view and ios giving the current WOS input data in the localstorage
+ */
 function openPrintView(obj) {
     console.log(obj);
     window.location.href = 'http://localhost:8080/print';
@@ -12,6 +16,10 @@ function openPrintView(obj) {
     localStorage.setItem("performanceLevel", obj.performanceLevel);
 }
 
+/**
+ * @author tklautke
+ * @description this is getting the WOS data out of the localstorage and is setting the .innerHTML in the print.html
+ */
 function printDataHTML() {
     document.getElementById('print-firstname').innerHTML = localStorage.getItem("firstName");
     document.getElementById('print-lastname').innerHTML = localStorage.getItem("lastName");

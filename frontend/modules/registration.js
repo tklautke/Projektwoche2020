@@ -1,3 +1,8 @@
+/**
+ * @author tklautke
+ * @link sendJsonToServer
+ * @description this is getting the input value from the registration form
+ */
 function valueFromInputRegistration() {
     const firstName = document  = document.getElementById("first-name-registration").value;
     const lastName = document.getElementById("last-name-registration").value;
