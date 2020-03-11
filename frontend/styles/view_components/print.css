@@ -1,0 +1,19 @@
+.print-body {
+    width: 30cm;
+    height: 42cm;
+}
+
+.print-headliner{
+    margin-top: 1cm;
+    margin-left: 10cm;
+}
+
+.print-sub-headliner{
+    margin-left: 10cm;
+}
+
+.print-values{
+    margin-top: 10cm;
+    margin-left: 3cm;
+    font-size: 0.8cm;
+}
