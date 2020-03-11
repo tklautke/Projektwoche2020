@@ -14,6 +14,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
  *  @description this is the main function, which is includes the "btn" blick event
  */
 function main() {
-    document.getElementById("btn-wos").addEventListener("click", valueFromInputWos);
+    printDataHTML();
 }
-

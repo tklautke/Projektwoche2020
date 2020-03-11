@@ -31,6 +31,8 @@ function valueFromInputWos() {
 
     const url = "/wosInput";
     sendJsonToServer(objString, url);
+    console.log("So need to be done");
+    openPrintView(obj)
 }
 
 function acceptPupilWos() {
@@ -52,4 +54,7 @@ function acceptPupilWos() {
     const objString = JSON.stringify(obj);
 
     sendJsonToServer(objString, url);
+
+    openPrintView(obj);
+
 }

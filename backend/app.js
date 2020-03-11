@@ -38,6 +38,10 @@ app.get('/wosSchueler', function (req, res) {
     res.sendFile('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/wosSchueler.html')
 });
 
+app.get('/print', function (req, res) {
+    res.sendFile('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/print.html')
+});
+
 app.post('/registration', (req, res) => {
     const reqBody = req.body;
     const firstName = reqBody.FirstName;
