@@ -10,32 +10,15 @@ function openPrintView(obj) {
     localStorage.setItem("zipCode", obj.zipCode);
     localStorage.setItem("discipline", obj.discipline);
     localStorage.setItem("performanceLevel", obj.performanceLevel);
-
-    console.log(obj)
-
-    //firstName, lastName, schoolClass, adress, city
-
 }
 
 function printDataHTML() {
-
-    const firstName = localStorage.getItem("firstName");
-    const lastName = localStorage.getItem("lastName");
-    const schoolClass = localStorage.getItem("schoolClass");
-    const adress = localStorage.getItem("adress");
-    const city = localStorage.getItem("city");
-    const zipCode = localStorage.getItem("zipCode");
-    const discipline = localStorage.getItem("discipline");
-    const performanceLevel = localStorage.getItem("performanceLevel");
-
-    document.getElementById('print-firstname').innerHTML = firstName;
-    document.getElementById('print-lastname').innerHTML = lastName;
-    document.getElementById('print-classname').innerHTML = schoolClass;
-    document.getElementById('print-adress').innerHTML = adress;
-    document.getElementById('print-city').innerHTML = city;
-    document.getElementById('print-plz').innerHTML = zipCode;
-    document.getElementById('print-discipline').innerHTML = discipline;
-    document.getElementById('print-performance-class').innerHTML = performanceLevel;
-
-
+    document.getElementById('print-firstname').innerHTML = localStorage.getItem("firstName");
+    document.getElementById('print-lastname').innerHTML = localStorage.getItem("lastName");
+    document.getElementById('print-classname').innerHTML = localStorage.getItem("schoolClass");
+    document.getElementById('print-adress').innerHTML = localStorage.getItem("adress");
+    document.getElementById('print-city').innerHTML = localStorage.getItem("city");
+    document.getElementById('print-plz').innerHTML = localStorage.getItem("zipCode");
+    document.getElementById('print-discipline').innerHTML = localStorage.getItem("discipline");
+    document.getElementById('print-performance-class').innerHTML = localStorage.getItem("performanceLevel");
 }

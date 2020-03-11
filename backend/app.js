@@ -7,6 +7,13 @@ const dbInsertWOS = require('./modules/db_operations/db_insert_wos.js');
 const dbSelect = require('./modules/db_operations/db_select.js');
 const uuidv1 = require('uuidv1');
 
+//these paths need to be changes on the server
+const pathFrontend = '/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/';
+const pathIndex = '/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/index.html';
+const pathWosLehrer = '/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/wosLehrer.html';
+const pathWosSchueler = '/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/wosSchueler.html';
+const pathPrint = '/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/print.html';
+
 /*This is the port where the page starts */
 const port = 8080;
 app.listen(port, () => console.log(`Server started at port: ${port}`));
@@ -24,22 +31,22 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.use(express.static('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/'));
+app.use(express.static(pathFrontend));
 
 app.get('/', function (req, res) {
-    res.sendFile('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/index.html')
+    res.sendFile(pathIndex)
 });
 
 app.get('/wosLehrer', function (req, res) {
-    res.sendFile('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/wosLehrer.html')
+    res.sendFile(pathWosLehrer)
 });
 
 app.get('/wosSchueler', function (req, res) {
-    res.sendFile('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/wosSchueler.html')
+    res.sendFile(pathWosSchueler)
 });
 
 app.get('/print', function (req, res) {
-    res.sendFile('/Users/theoklautke/Projekte/Projektwoche2020/source/frontend/print.html')
+    res.sendFile(pathPrint)
 });
 
 app.post('/registration', (req, res) => {
@@ -52,9 +59,6 @@ app.post('/registration', (req, res) => {
     const uuid = uuidv1();
     const timestamp = new Date();
 
-    console.log(firstName, lastName, username, password, uuid, timestamp);
-    console.log("Der Typ ist: " + typ);
-
     dbInsert.dbInsert(firstName, lastName, username, password, uuid, timestamp, typ);
     res.send("success /registration")
 });
@@ -63,7 +67,6 @@ app.post('/login', (req, res) => {
     const reqBody = req.body;
     const username = reqBody.Username;
     const password = reqBody.Password;
-    console.log(username);
     dbSelect.dbSelect(username, password, res);
 });
 
@@ -90,9 +93,6 @@ app.post('/accept-pupil', (req, res) => {
     const lastname = reqBody.lastname;
     const signed = reqBody.signed;
     const payed = reqBody.payed;
-
-    console.log(lastname, signed, payed);
-    console.log(reqBody);
 
     dbUpdateWos.dbUpdateWos(lastname, signed, payed, res);
 });

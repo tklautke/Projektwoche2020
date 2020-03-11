@@ -1,8 +1,4 @@
-/**
- *  @link sendJsonToServer
- *  @author tklautke
- *  @description this function is getting the values of the Wos input fields
- */
+
 function valueFromInputWos() {
     const firstName = document = document.getElementById("first-name-wos").value;
     const lastName = document = document.getElementById("last-name-wos").value;
@@ -12,8 +8,6 @@ function valueFromInputWos() {
     const zipCode = document = document.getElementById("inputZip-wos").value;
     const discipline = document = document.getElementById("discipline-input-wos").value;
     const performanceLevel = document = document.getElementById("performance-level-wos").value;
-
-    console.log(firstName, lastName, schoolClass, adress, city, zipCode, discipline, performanceLevel);
 
     const obj = {
         "firstName": firstName,
@@ -26,12 +20,10 @@ function valueFromInputWos() {
         "performanceLevel": performanceLevel
     };
 
-    console.log(obj);
     const objString = JSON.stringify(obj);
 
     const url = "/wosInput";
     sendJsonToServer(objString, url);
-    console.log("So need to be done");
     openPrintView(obj)
 }
 
@@ -39,8 +31,6 @@ function acceptPupilWos() {
     const signed = document = document.getElementById("accept-pupil-signed").checked;
     const payed = document = document.getElementById("accept-pupil-payed").checked;
     const lastname = document = document.getElementById("lastname-accept").value;
-
-    console.log(signed, payed);
 
     const url = "/accept-pupil";
 
@@ -50,11 +40,9 @@ function acceptPupilWos() {
         "payed": payed
     };
 
-    console.log(obj);
     const objString = JSON.stringify(obj);
 
     sendJsonToServer(objString, url);
 
     openPrintView(obj);
-
 }

@@ -1,8 +1,3 @@
-/**
- *  @link sendJsonToServer
- *  @author tklautke
- *  @description this function is getting the values of the registration input fields
- */
 function valueFromInputRegistration() {
     const firstName = document  = document.getElementById("first-name-registration").value;
     const lastName = document.getElementById("last-name-registration").value;
@@ -18,7 +13,6 @@ function valueFromInputRegistration() {
         "typ": type
     };
 
-    console.log(obj);
     const objString = JSON.stringify(obj);
 
     const url = "/registration";

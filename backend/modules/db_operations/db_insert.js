@@ -9,11 +9,8 @@ router.use(function (req, res, next) {
 });
 
 exports.dbInsert = async function dbInsert(firstName, lastName, username, password, uuid, timestamp, type) {
-    console.log('database insert');
     new Promise((resolve, reject) => {
         try {
-            //TODO Insert UUID and timestamp
-            console.log(firstName, lastName, username, password, uuid, timestamp, type);
             db.query(
                 `INSERT INTO PROJEKTWOCHE_GRUNDSCHULE.FULL_USER SET timestamp = ?, uuid = ?, firstName = ?, lastName = ?, username = ?, password = ?, type = ?`,
                 [timestamp, uuid, firstName, lastName, username, password, type],

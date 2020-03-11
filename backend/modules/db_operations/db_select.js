@@ -9,16 +9,11 @@ router.use(function (req, res, next) {
 });
 
 exports.dbSelect = async function dbSelect(username, password, res) {
-    console.log('database select');
-    console.log("Username is:", username);
     new Promise((resolve, reject) => {
         try {
             db.query(
                 `SELECT * FROM PROJEKTWOCHE_GRUNDSCHULE.FULL_USER WHERE username = '${username}'`,
                 (err, result, fields) => {
-                    console.log(result);
-                    //TODO let service dont crash if the username is not in database
-
                     if (result.length == 0) {
                         res.send("err");
                         return;

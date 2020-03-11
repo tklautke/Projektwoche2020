@@ -1,7 +1,7 @@
 const mysql = require('mysql');
-const db_cofig = require('./db_config.js');
+const db_config = require('./db_config.js');
 
-let pool = mysql.createPool(db_cofig);
+let pool = mysql.createPool(db_config);
 
 pool.getConnection(function (err, connection) {
     if (err === null) {

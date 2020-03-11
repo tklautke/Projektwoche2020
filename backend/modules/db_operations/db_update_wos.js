@@ -24,4 +24,4 @@ exports.dbUpdateWos = async function dbUpdateWos(lastname, signed, payed, res) {
             reject(error)
         }
     })
-}
+};
