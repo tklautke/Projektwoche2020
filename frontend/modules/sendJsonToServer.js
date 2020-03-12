@@ -3,6 +3,9 @@
  * @link openWrongPassword
  * @link openNewHtmlPage
  * @description this is sending the values from the inputs in the backend.
+ * @param objString has the object with all filled in values
+ * @param url has the url fot the page
+ * @param teacher detects if the user is a teacher or a student
  */
 function sendJsonToServer(objString, url, teacher) {
     const host = "http://localhost:8080";

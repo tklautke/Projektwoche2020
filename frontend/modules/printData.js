@@ -1,6 +1,7 @@
 /**
  * @author tklautke
  * @description this opens the print view and ios giving the current WOS input data in the localstorage
+ * @param obj has the data from the wos form inputs
  */
 function openPrintView(obj) {
     console.log(obj);
