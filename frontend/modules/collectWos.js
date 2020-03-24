@@ -51,5 +51,4 @@ function acceptPupilWos() {
 
     const objString = JSON.stringify(obj);
     sendJsonToServer(objString, url);
-    openPrintView(obj);
 }
