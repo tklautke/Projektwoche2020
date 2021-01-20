@@ -7,7 +7,7 @@ This is the source code for the project week 2021 at the "Elektronikschule Tettn
 ### Technologies 
 * [Node.js](https://nodejs.org/en/)
 * [NPM](https://www.npmjs.com/)
-* [MySQL DB](https://www.mysql.com/)
+* [MySQL](https://www.mysql.com/)
 * JavaScript
 
 ## 👉 Getting Started
